@@ -14,10 +14,9 @@ const Navbar = ({location}) => {
           <Link to={'/'}><h1 className='font-bold text-3xl cursor-pointer'><span className='text-red-400 font-serif'>Z</span>aptro</h1></Link>
           <div className="flex gap-1 cursor-pointer text-gray-700 items-center">
             <MapPin className='text-red-400' />
-            <span className='font-semibold '>{location ? <div>
-              {
-                location.road
-              }
+            <span className='font-semibold'>{location ? <div className='-space-y-1'>
+                <p>{location.road}</p>
+                <p>{location.district}</p>
             </div> : "Add Address"}</span>
             <FaCaretDown />
           </div>
