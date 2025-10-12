@@ -31,7 +31,7 @@ const Navbar = () => {
             <IoCartOutline className='h-7 w-7' />
             <span className='bg-red-400 text-white px-2 rounded-full absolute -top-3 -right-3'>0</span>
           </Link>
-          <div className="">
+          <div className="items-center">
             <SignedOut>
               <SignInButton className="bg-red-400 px-2 py-1 rounded text-white cursor-pointer hover:bg-red-300" />
             </SignedOut>
