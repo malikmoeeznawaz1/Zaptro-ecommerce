@@ -9,7 +9,9 @@ export const DataProvider = ({children}) => {
     // fetching prods from API
     const fetchAllProds = async() => {
         try {
-            const res = await axios.get()
+            const res = await axios.get("https://fakestoreapi.com/products")
+            setData(res.data);
+            
         } catch (error) {
             console.log(error);
             
