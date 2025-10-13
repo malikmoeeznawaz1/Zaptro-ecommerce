@@ -1,16 +1,21 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link, NavLink } from 'react-router-dom'
 import Home from '../Pages/Home'
 import { MapPin } from 'lucide-react'
 import { FaCaretDown } from 'react-icons/fa'
 import { IoCartOutline } from 'react-icons/io5'
 import { SignedIn, SignedOut, SignInButton, UserButton } from '@clerk/clerk-react'
+import { CgClose } from 'react-icons/cg'
 
-const Navbar = ({location}) => {
+const Navbar = ({location, getLocation}) => {
+  const [openDropdown, setOpenDropdown] = useState(false);
+  const toogleDropdown = () => {
+    setOpenDropdown(!openDropdown);
+  }
   return (
     <div className='bg-white py-3 shadow-2xl'>
       <div className="max-w-6xl mx-auto flex items-center justify-between">
-        <div className="flex gap-7 items-center">
+        <div className="flex gap-7 items-center"> 
           <Link to={'/'}><h1 className='font-bold text-3xl cursor-pointer'><span className='text-red-400 font-serif'>Z</span>aptro</h1></Link>
           <div className="flex gap-1 cursor-pointer text-gray-700 items-center">
             <MapPin className='text-red-400' />
@@ -18,8 +23,14 @@ const Navbar = ({location}) => {
                 <p>{location.road}</p>
                 <p>{location.district}</p>
             </div> : "Add Address"}</span>
-            <FaCaretDown />
+            <FaCaretDown onClick={toogleDropdown} />
           </div>
+          {
+            openDropdown? <div className='w-[230px] h-max shadow-2xl bg-white top-17 left-44 z-50 border-2 p-5 border-gray-100 rounded-md fixed'>
+              <h1 className='font-semibold mb-4 flex justify-between'>Change Location <span onClick={toogleDropdown} className='cursor-pointer'><CgClose /></span></h1>
+              <button onClick={()=>{getLocation(), toogleDropdown()}} className='bg-red-400 px-3 py-1 rounded-md cursor-pointer text-white'>Detect my location</button>
+            </div> : null
+          }
         </div>
         {/* menu section */}
         <nav className='flex items-center gap-7'>

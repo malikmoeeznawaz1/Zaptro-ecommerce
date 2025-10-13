@@ -35,7 +35,7 @@ const App = () => {
 
   return (
     <BrowserRouter>
-    <Navbar location={location} />
+    <Navbar location={location} getLocation={getLocation} />
       <Routes>
         <Route path='/' element={<Home />}></Route>
         <Route path='/products' element={<Products />}></Route>
