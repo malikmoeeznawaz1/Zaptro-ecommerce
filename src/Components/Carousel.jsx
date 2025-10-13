@@ -19,20 +19,20 @@ const Carousel = () => {
         speed: 500,
         slidesToShow: 1,
         slidesToScroll: 1,
-        nextArrow: <SampleNextArrow to="next" />,
-        prevArrow: <SamplePrevArrow to="prev" />
+        // nextArrow: <SampleNextArrow to="next" />,
+        // prevArrow: <SamplePrevArrow to="prev" />
     };
 
     return (
-        <div className='max-w-screen overflow-hidden'>
+        <div className='w-screen overflow-hidden'>
             <Slider {...settings}>
                 {
                     data?.slice(0,7)?.map((item, index)=>{
-                        return <div key={index} className='bg-gradient-to-r from-[#0f0c29] via-[#302b63] to-[#24243e] -z-10'>
+                        return <div key={index} className='bg-gradient-to-r from-[#0f0c29] via-[#302b63] to-[#24243e] -z-10 px-5 '>
                             <div className="flex gap-7 justify-center md:h-[400px] items-center ">
                                 <div className="">
                                     <h3 className='text-red-400 font-semibold font-sans text-sm'>Powering Your World with the Best in Electronics.</h3>
-                                    <h1 className="text-4xl font-bold uppercase text-white line-clamp-3 md:w-[500px]">{item.title}</h1>
+                                    <h1 className="text-4xl font-bold uppercase text-white line-clamp-3 md:w-[300px]">{item.title}</h1>
                                     <p className="md:w-[500px] text-gray-400 pr-7 py-4 line-clamp-3">{item.description.length > 190 ? item.description.slice(0,187) + "..." : item.description}</p>
                                     <button className="bg-gradient-to-r from-red-400 to-purple-400 rounded px-3 py-1 text-white font-semibold font-sans cursor-pointer mt-3">Shop Now</button>
                                 </div>
