@@ -9,6 +9,8 @@ const Carousel = () => {
         fetchAllProds();
     }, [])
 
+    // SampleNextArrow, SamplePrevArrow functions
+
     var settings = {
         dots: false,
         autoplay:true,
