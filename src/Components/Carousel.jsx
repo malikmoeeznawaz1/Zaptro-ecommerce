@@ -39,6 +39,7 @@ const Carousel = () => {
         autoplaySpeed: 3000,
         infinite: true,
         speed: 500,
+        pauseOnHover: false,
         slidesToShow: 1,
         slidesToScroll: 1,
         nextArrow: <SampleNextArrow />,
