@@ -64,11 +64,7 @@ const Carousel = () => {
                             </div>
                         </div>
                     })
-                }
-                <div>
-                    <h3>1</h3>
-                </div>
-               
+                }               
             </Slider> 
         </div>
     )
