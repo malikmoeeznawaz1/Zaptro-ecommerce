@@ -1,10 +1,11 @@
-import React, { useContext, useEffect } from 'react'
-import { DataContext } from '../Context/DataContext'
+import React, { useEffect } from 'react'
+import { getData } from '../Context/DataContext'
 import Slider from 'react-slick';
 import { AiOutlineArrowLeft, AiOutlineArrowRight } from 'react-icons/ai';
+import Category from './Category';
 
 const Carousel = () => {
-    const { data, fetchAllProds } = useContext(DataContext);
+    const { data, fetchAllProds } = getData();
 
     useEffect(() => {
         fetchAllProds();
@@ -67,6 +68,7 @@ const Carousel = () => {
                     })
                 }               
             </Slider> 
+            <Category />
         </div>
     )
 }
