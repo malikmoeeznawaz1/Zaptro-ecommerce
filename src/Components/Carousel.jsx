@@ -1,6 +1,7 @@
 import React, { useContext, useEffect } from 'react'
 import { DataContext } from '../Context/DataContext'
 import Slider from 'react-slick';
+import { AiOutlineArrowLeft, AiOutlineArrowRight } from 'react-icons/ai';
 
 const Carousel = () => {
     const { data, fetchAllProds } = useContext(DataContext);
@@ -10,6 +11,27 @@ const Carousel = () => {
     }, [])
 
     // SampleNextArrow, SamplePrevArrow functions
+    const SamplePrevArrow = (props) => {
+        const {className, style, onClick} = props;
+
+        return (
+            <div onClick={onClick} className={`arrow ${className}`} style={{zIndex:3}}>
+                <AiOutlineArrowLeft className='' style={{...style, display:"block", borderRadius:"50px", backgroundColor: "#f53347", color:"white", position: "absolute", padding:"2px", left:"50px", height:"40px", width: "40px", margin:"1px"
+                }}/>
+            </div>
+        );
+    }
+
+    const SampleNextArrow = (props) => {
+        const {className, style, onClick} = props;
+        
+        return (
+            <div onClick={onClick} className={`arrow ${className}`} style={{zIndex:3}}>
+                <AiOutlineArrowRight className='' style={{...style, display:"block", borderRadius:"50px", backgroundColor: "#f53347", color:"white", position: "absolute", padding:"2px", left:"50px", height:"40px", width: "80px", margin:"1px"
+                }}  />
+            </div>
+        );
+    }
 
     var settings = {
         dots: false,
@@ -19,8 +41,8 @@ const Carousel = () => {
         speed: 500,
         slidesToShow: 1,
         slidesToScroll: 1,
-        // nextArrow: <SampleNextArrow to="next" />,
-        // prevArrow: <SamplePrevArrow to="prev" />
+        nextArrow: <SampleNextArrow />,
+        prevArrow: <SamplePrevArrow />
     };
 
     return (
@@ -47,7 +69,7 @@ const Carousel = () => {
                     <h3>1</h3>
                 </div>
                
-            </Slider>
+            </Slider> 
         </div>
     )
 }
