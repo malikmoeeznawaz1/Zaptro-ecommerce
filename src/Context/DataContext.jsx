@@ -1,5 +1,5 @@
 import axios from "axios";
-import { createContext, useState } from "react";
+import { createContext, useContext, useState } from "react";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
@@ -27,3 +27,5 @@ export const DataProvider = ({children}) => {
 
     return <DataContext.Provider value={obj} >{children}</DataContext.Provider>
 }
+
+export const getData = () => useContext
