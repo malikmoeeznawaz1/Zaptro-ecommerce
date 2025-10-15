@@ -27,8 +27,8 @@ const Carousel = () => {
         
         return (
             <div onClick={onClick} className={`arrow ${className}`} style={{zIndex:3}}>
-                <AiOutlineArrowRight className='' style={{...style, display:"block", borderRadius:"50px", backgroundColor: "#f53347", color:"white", position: "absolute", padding:"2px", left:"50px", height:"40px", width: "80px", margin:"1px"
-                }}  />
+                <AiOutlineArrowRight className='' style={{...style, display:"block", borderRadius:"50px", backgroundColor: "#f53347", color:"white", position: "absolute", padding:"2px", right:"50px", height:"40px", width: "40px", margin:"1px"
+                }} />
             </div>
         );
     }
