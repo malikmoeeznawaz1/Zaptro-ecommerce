@@ -48,7 +48,7 @@ const Carousel = () => {
     };
 
     return (
-        <div className='w-screen overflow-hidden'>
+        <div className='w-full-hidden'>
             <Slider {...settings}>
                 {
                     data?.slice(0,7)?.map((item, index)=>{

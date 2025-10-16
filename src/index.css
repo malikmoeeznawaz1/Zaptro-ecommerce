@@ -4,3 +4,9 @@
     width: 2rem;
     height: 2rem;
 }
+
+/* Prevent accidental horizontal scroll */
+html, body, #root {
+    max-width: 100%;
+    overflow-x: hidden;
+}
