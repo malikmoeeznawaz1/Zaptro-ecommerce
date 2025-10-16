@@ -4,7 +4,7 @@ import banner from '../assets/banner1.jpg'
 const MidBanner = () => {
   return (
     <div className='w-full p-16'>
-      <div className="relative rounded-2xl bg-red-500 bg-cover h-[550px]" style={{backgroundImage: `url(${banner})`, backgroundAttachment: `fixed`}}>
+      <div className="relative rounded-2xl bg-cover h-[550px]" style={{backgroundImage: `url(${banner})`, backgroundAttachment: `fixed`}}>
         <div className='absolute inset-0 bg-black/50 rounded-2xl flex justify-center items-center'>
             <div className='flex flex-col justify-center items-center'>
                 <p className=' text-3xl text-white font-bold items-center'>Next-Gen Electronics at Your Fingertips</p>
